@@ -116,6 +116,7 @@ export default function BoardView() {
               <h3 className="flex h-8 items-center text-xs">
                 {board}{" "}
                 <ExportButton
+                  tooltip={`${board}`}
                   action={async () => {
                     const { data } = await request(
                       routes.downloadResourceRequests,

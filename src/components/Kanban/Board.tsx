@@ -150,8 +150,20 @@ export function KanbanSection<T extends { id: string }>(
           }
         >
           <div className="sticky top-0 rounded-xl bg-secondary-200 pt-2">
-            <div className="mx-2 flex items-center justify-between rounded-lg border border-secondary-300 bg-white p-4">
-              <div>{section.title}</div>
+            <div
+              className={`mx-2 flex items-center justify-between rounded-lg border p-4 ${
+                section.id === "COMPLETED"
+                  ? "border-green-500 bg-green-500 "
+                  : "border-secondary-300 bg-white"
+              }`}
+            >
+              <div>
+                {section.id === "COMPLETED" ? (
+                  <span className="font-bold text-white">{section.title}</span>
+                ) : (
+                  section.title
+                )}
+              </div>
               <div>
                 <span className="ml-2 rounded-lg bg-secondary-300 px-2">
                   {typeof totalCount === "undefined" ? "..." : totalCount}

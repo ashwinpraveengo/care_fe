@@ -113,7 +113,7 @@ export const ExportButton = ({
   ...props
 }: ExportButtonProps) => {
   const { isExporting, exportFile } = useExport();
-
+  const isCompleted = props.tooltip?.toLowerCase() === "completed";
   return (
     <>
       <ButtonV2
@@ -130,7 +130,11 @@ export const ExportButton = ({
             exportFile(action, props.filenamePrefix, type, parse);
           }
         }}
-        className="tooltip mx-2 p-4 text-lg text-secondary-800 disabled:bg-transparent disabled:text-secondary-500"
+        className={`tooltip mx-2 p-4 text-lg ${
+          isCompleted
+            ? "text-white"
+            : "text-secondary-800 disabled:bg-transparent disabled:text-secondary-500"
+        }`}
         variant="secondary"
         ghost
         circle
