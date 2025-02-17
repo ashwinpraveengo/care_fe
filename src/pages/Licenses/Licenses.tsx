@@ -16,8 +16,8 @@ import { getPackageUrl } from "@/pages/Licenses/utils";
 import { LicensesSbom } from "@/types/license";
 
 const sbomUrlMap = {
-  frontend: "/sbom/care_fe-sbom.json",
-  backend: "/sbom/care-sbom.json",
+  frontend: "https://sbom.ohc.network/care_fe/v3.0.0/sbom.json",
+  backend: "https://sbom.ohc.network/care/v3.0.0/sbom.json",
 };
 
 export const LicensesPage = () => {
